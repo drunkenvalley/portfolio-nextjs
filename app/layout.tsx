@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Noto_Sans } from "next/font/google";
 import "./globals.css";
 import Link from "next/link";
+import Palette from "./palette";
 
 const noto = Noto_Sans({ subsets: ["latin"], variable: "--font-noto-sans" });
 
@@ -28,7 +29,7 @@ export default function RootLayout({
       <body
         className={`${noto.variable} font-noto bg-custom-img bg-cover bg-center bg-no-repeat backdrop-blur-3xl min-h-full flex flex-col`}
       >
-        <div className="min-h-full block bg-black/60 grow">
+        <div className="min-h-full block bg-[#444466]/90 grow">
           <nav className="flex flex-row p-8 py-6 gap-8">
             {(arrLinks?.length &&
               arrLinks.map(([label, href]) => (
@@ -36,7 +37,7 @@ export default function RootLayout({
                   key={label}
                   href={href}
                   className={`
-                    text-blue-100
+                    text-[#ffbd67]
                     bg-gradient-to-r
                     from-current
                     to-current
@@ -45,8 +46,8 @@ export default function RootLayout({
                     bg-[length:1ch_0.25ch]
                     hover:bg-[length:100%_0.1em]
                     focus:bg-[length:100%_0.1em]
-                    hover:to-blue-400
-                    focus:to-blue-400
+                    hover:to-[#f9f871]
+                    focus:to-[#f9f871]
                     transition-all
                     duration-300
                     ease-in-out
@@ -57,7 +58,10 @@ export default function RootLayout({
               ))) ||
               undefined}
           </nav>
-          {children}
+          <main className="p-8 flex flex-col justify-start">
+            {children}
+            <Palette />
+          </main>
         </div>
       </body>
     </html>
