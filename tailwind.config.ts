@@ -17,6 +17,14 @@ const config: Config = {
       fontFamily: {
         noto: "var(--font-noto-sans)",
       },
+      colors: {
+        dark: "#444466",
+        tertiary: "#845781",
+        secondary: "#c66b86",
+        primary: "#f78c78",
+        light: "#ffbd67",
+        bright: "#f9f871",
+      },
     },
   },
   plugins: [],
